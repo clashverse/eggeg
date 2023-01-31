@@ -86,14 +86,14 @@ jobs:
             echo "GITHUB_TOKEN is unset or set to the empty string"
             exit 1
           fi
+          echo "Make sure we are on the base branch ($BASE_BRANCH_NAME)"
+          git checkout $BASE_BRANCH_NAME
           echo "Check that we are on FROM_STEP"
           if [ "$(cat .github/script/STEP)" != $FROM_STEP ]
           then
             echo "Current step is not $FROM_STEP"
             exit 0
           fi
-          echo "Make sure we are on the base branch ($BASE_BRANCH_NAME)"
-          git checkout $BASE_BRANCH_NAME
           echo "Remove 'open' from any <details> tags"
           sed -i.tmp -r 's/<details id=([0-9X]+) open>/<details id=\1>/g' README.md
           echo "Add 'open' to step TO_STEP"
