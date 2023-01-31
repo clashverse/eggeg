@@ -117,8 +117,9 @@ jobs:
           if git show-ref --quiet refs/heads/$BRANCH_NAME
           then
             git checkout $BRANCH_NAME
-            COMMIT_ID=$(git rev-parse main --verify HEAD)
+            COMMIT_ID=$(git rev-parse main)
             git cherry-pick $COMMIT_ID
+            git cherry-pick --continue
             git push
           else
             echo "Branch $BRANCH_NAME does not exist"
