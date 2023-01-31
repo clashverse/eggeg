@@ -117,7 +117,7 @@ jobs:
           if git show-ref --quiet refs/heads/$BRANCH_NAME
           then
             git checkout $BRANCH_NAME
-            COMMIT_ID=$(git rev-parse --verify HEAD)
+            COMMIT_ID=$(git rev-parse main --verify HEAD)
             git cherry-pick $COMMIT_ID
             git push
           else
