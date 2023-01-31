@@ -75,7 +75,7 @@ jobs:
       # Update README to close <details id=0> and open <details id=1>
       # and set STEP to '1'
       - name: Update to step 1
-        uses: ./.github/workflows/update-step.yaml
+        uses: ./.github/workflows/update
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 0
