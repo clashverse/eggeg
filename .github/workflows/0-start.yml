@@ -112,11 +112,11 @@ jobs:
           git add README.md
           git add .github/script/STEP
           git commit --message="Update to $TO_STEP in STEP and README.md"
+          COMMIT_ID=$(git rev-parse HEAD)
           git push
           echo "If BRANCH_NAME, update that branch as well"
           if git show-ref --quiet refs/heads/$BRANCH_NAME
           then
-            COMMIT_ID=$(git rev-parse)
             git checkout $BRANCH_NAME
             git cherry-pick $COMMIT_ID
             git push
