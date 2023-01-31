@@ -87,8 +87,8 @@ jobs:
           echo "If BRANCH_NAME, update that branch as well"
           if git show-ref --quiet refs/heads/$BRANCH_NAME
           then
+            COMMIT_ID=$(git rev-parse)
             git checkout $BRANCH_NAME
-            COMMIT_ID=$(git rev-parse main)
             git cherry-pick $COMMIT_ID
             git push
           else
