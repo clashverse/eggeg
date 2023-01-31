@@ -99,3 +99,4 @@ jobs:
           FROM_STEP: 1
           TO_STEP: 2
           BRANCH_NAME: "update-game"
+          BASE_BRANCH_NAME: "main"
