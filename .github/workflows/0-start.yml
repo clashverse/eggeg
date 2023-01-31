@@ -124,3 +124,6 @@ jobs:
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FROM_STEP: 0
+          TO_STEP: 1
+          BRANCH_NAME: "update-game"
