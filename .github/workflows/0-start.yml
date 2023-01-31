@@ -128,3 +128,4 @@ jobs:
           FROM_STEP: 0
           TO_STEP: 1
           BRANCH_NAME: "update-game"
+          BASE_BRANCH_NAME: "main"
